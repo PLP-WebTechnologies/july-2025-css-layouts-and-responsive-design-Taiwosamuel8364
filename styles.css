@@ -1,0 +1,125 @@
+/* Base styles */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f7f7f7;
+  color: #222;
+}
+header {
+  background: #2d3e50;
+  color: #fff;
+  padding: 1.5rem 1rem;
+  text-align: center;
+}
+nav {
+  background: #1abc9c;
+}
+.nav-list {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0.75rem 0;
+}
+.nav-list li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+.nav-list li a:hover {
+  color: #222;
+}
+
+/* Main layout using CSS Grid */
+.main-layout {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+.content {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+.sidebar {
+  background: #eaf6f6;
+  padding: 1.5rem 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+}
+.sidebar h3 {
+  margin-top: 0;
+}
+
+/* Card container using Flexbox */
+.card-container {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+.card {
+  background: #f1c40f;
+  color: #222;
+  padding: 1rem;
+  border-radius: 6px;
+  flex: 1 1 150px;
+  min-width: 120px;
+  text-align: center;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+}
+
+footer {
+  background: #2d3e50;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+/* Responsive styles */
+@media (max-width: 900px) {
+  .main-layout {
+    grid-template-columns: 2fr 1fr;
+    gap: 1rem;
+  }
+  .card-container {
+    gap: 0.5rem;
+  }
+}
+@media (max-width: 700px) {
+  .main-layout {
+    grid-template-columns: 1fr;
+  }
+  .sidebar {
+    margin-top: 1.5rem;
+  }
+  .card-container {
+    flex-direction: column;
+  }
+}
+@media (max-width: 500px) {
+  header {
+    padding: 1rem 0.5rem;
+  }
+  .main-layout {
+    padding: 0 0.25rem;
+  }
+  .content, .sidebar {
+    padding: 1rem 0.5rem;
+  }
+  .nav-list {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+  }
+}
